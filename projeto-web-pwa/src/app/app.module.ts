@@ -22,6 +22,8 @@ import { MatSidenavModule, MatTabsModule, MatInputModule, MatDatepickerModule, M
          MatSelectModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatStepperModule, MatTooltipModule
         } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxLoadingModule,ngxLoadingAnimationTypes } from 'ngx-loading';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   exports: [
@@ -84,6 +86,16 @@ export class MaterialModule {}
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    HttpClientModule,
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.circle,
+      backdropBackgroundColour: 'rgba(0,0,0,0.6)', 
+      backdropBorderRadius: '4px',
+      primaryColour: '#ffffff', 
+      secondaryColour: '#ffffff', 
+      tertiaryColour: '#ffffff'
+    }),
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
